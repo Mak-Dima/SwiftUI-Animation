@@ -11,33 +11,6 @@ struct PhaseAnimationView: View {
     
     @State private var counter: Int = 0
     
-    private enum Phase: CaseIterable {
-        case initial
-        case moveUp
-        case rotation
-        
-        var verticalOffset: Double {
-            switch self {
-            case .initial: .zero
-            case .moveUp, .rotation: -100
-            }
-        }
-        
-        var horizontalOffset: Double {
-            switch self {
-            case .initial: .zero
-            case .moveUp, .rotation: 50
-            }
-        }
-        
-        var rotationEffect: Angle {
-            switch self {
-            case .initial: .zero
-            case .moveUp, .rotation: .degrees(-40)
-            }
-        }
-    }
-    
     var body: some View {
         VStack {
             Image(systemName: "hand.thumbsup")
@@ -63,7 +36,6 @@ struct PhaseAnimationView: View {
                 Text(String(counter))
                     .font(Font.largeTitle.bold())
             }
-        
     }
 }
 
